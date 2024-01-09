@@ -29,9 +29,6 @@ const TravelGlobe = React.forwardRef((props, ref) => {
       });
   }, []);
 
-  useEffect(() => {
-    ref.current.focus();
-  });
   return (
     <Globe
       forwardedRef={ref}

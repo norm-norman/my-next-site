@@ -54,7 +54,6 @@ export default function Home({
       </Head>
 
       <main>
-        {/* @ts-expect-error Server Component */}
         <EntryComponent song={song} />
       </main>
 

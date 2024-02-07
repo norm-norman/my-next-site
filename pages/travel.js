@@ -4,6 +4,14 @@ import clientPromise from '../lib/mongodb';
 import * as THREE from 'three';
 import * as topojson from 'topojson-client';
 import TravelGlobe from '../src/travel-globe';
+import TravelGlobeWrapper from '../src/travel-globe-wrapper';
+
+// const TravelGlobeWrapper = dynamic(
+//   () => {
+//     return import('../src/travel-globe-wrapper');
+//   },
+//   { ssr: false }
+// );
 
 export default function Travel({ locations }) {
   const globeRef = useRef();
@@ -24,6 +32,11 @@ export default function Travel({ locations }) {
 
   return (
     <div>
+      <style jsx>{`
+        body {
+          margin: 0px;
+        }
+      `}</style>
       <TravelGlobe ref={globeRef} arcsData={arcsData} />
     </div>
   );

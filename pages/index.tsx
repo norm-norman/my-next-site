@@ -1,16 +1,26 @@
 import Head from 'next/head';
-import clientPromise from '../lib/mongodb';
+import mongoClientPromise from '../lib/mongodb';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
+import EntryComponent from '../src/entry-component';
+import { currentlyPlayingSong } from '../lib/spotify';
+import { NextUIProvider } from '@nextui-org/react';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
-type ConnectionStatus = {
+type InitialPropTypes = {
   isConnected: boolean;
+  song: object;
 };
 
 export const getServerSideProps: GetServerSideProps<
-  ConnectionStatus
+  InitialPropTypes
 > = async () => {
   try {
-    await clientPromise;
+    await mongoClientPromise;
+    const response = await currentlyPlayingSong();
+    const song = await response.json();
     // `await clientPromise` will use the default database passed in the MONGODB_URI
     // However you can use another database (e.g. myDatabase) by replacing the `await clientPromise` with the following code:
     //
@@ -21,28 +31,30 @@ export const getServerSideProps: GetServerSideProps<
     // db.find({}) or any of the MongoDB Node Driver commands
 
     return {
-      props: { isConnected: true },
+      props: { isConnected: true, song: song },
     };
   } catch (e) {
     console.error(e);
     return {
-      props: { isConnected: false },
+      props: { isConnected: false, song: null },
     };
   }
 };
 
 export default function Home({
   isConnected,
+  song,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div className="container">
       <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
         <title>Norm's Site</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <a href="/concerts">Concerts</a>
+        <EntryComponent song={song} />
       </main>
 
       <footer>
@@ -51,19 +63,19 @@ export default function Home({
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+          Powered by Vercel
         </a>
       </footer>
 
       <style jsx>{`
         .container {
           min-height: 100vh;
-          padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          margin: 0px;
+          background-color: #010121;
         }
 
         main {
@@ -73,15 +85,16 @@ export default function Home({
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          background-color: background-color: #010121;
         }
 
         footer {
           width: 100%;
           height: 100px;
-          border-top: 1px solid #eaeaea;
           display: flex;
           justify-content: center;
           align-items: center;
+          color: #a2a2ab;
         }
 
         footer img {
@@ -131,7 +144,7 @@ export default function Home({
         }
 
         code {
-          background: #fafafa;
+          background: 'black';
           border-radius: 5px;
           padding: 0.75rem;
           font-size: 1.1rem;
@@ -192,6 +205,9 @@ export default function Home({
       `}</style>
 
       <style jsx global>{`
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
         html,
         body {
           padding: 0;

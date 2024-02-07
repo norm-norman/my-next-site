@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import dynamic from 'next/dynamic';
 import * as THREE from 'three';
 import * as topojson from 'topojson-client';
+// import Globe from 'react-globe.gl';
 
 const Globe = dynamic(
   () => {
@@ -15,8 +16,7 @@ const polygonsMaterial = new THREE.MeshLambertMaterial({
   side: THREE.DoubleSide,
 });
 
-const TravelGlobe = React.forwardRef((props, ref) => {
-  console.log(ref);
+const TravelGlobe = forwardRef((props, ref) => {
   const [landPolygons, setLandPolygons] = useState([]);
   useEffect(() => {
     // load data
@@ -29,10 +29,15 @@ const TravelGlobe = React.forwardRef((props, ref) => {
       });
   }, []);
 
+  useEffect(() => {
+    console.log(ref);
+    // forwardedRef.current.retry();
+    // globeRef.current.pointOfView({ lat: 40, lng: -71, altitude: 5 });
+  });
+
   return (
     <Globe
-      forwardedRef={ref}
-      globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+      ref={ref}
       backgroundColor="#020921"
       arcsData={props.arcsData}
       arcColor={'color'}

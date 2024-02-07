@@ -3,7 +3,7 @@ import SongInformationTile from './components/song-information-tile';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 
-const EntryComponent = ({ song }: { song: any }) => {
+const EntryComponent = ({ song }) => {
   const title = song?.item?.name;
   const songInfo = song?.item;
   const songURL = songInfo?.uri;

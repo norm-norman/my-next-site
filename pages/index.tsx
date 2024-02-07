@@ -11,7 +11,7 @@ import '@fontsource/roboto/700.css';
 
 type InitialPropTypes = {
   isConnected: boolean;
-  song: object;
+  song: any;
 };
 
 export const getServerSideProps: GetServerSideProps<
@@ -54,6 +54,7 @@ export default function Home({
       </Head>
 
       <main>
+        {/* @ts-expect-error Server Component */}
         <EntryComponent song={song} />
       </main>
 

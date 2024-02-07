@@ -9,7 +9,7 @@ const EntryComponent = ({ song }) => {
   const songURL = songInfo?.uri;
   const imageURL = songInfo?.album?.images[0]?.url;
   const artistName = songInfo?.artists[0]?.name;
-  // console.log(song?.item?);
+  console.log(song?.item?);
   return (
     <>
       <SongInformationTile

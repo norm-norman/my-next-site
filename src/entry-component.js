@@ -1,23 +1,34 @@
-// import React from 'react';
-import SongInformationTile from './components/song-information-tile';
 import * as React from 'react';
-import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import Image from 'next/image';
+// Page Sections
+import WelcomeHero from './sections/welcome-hero';
+import WebDevelopmentPillars from './sections/web-development-pillars';
 
 const EntryComponent = ({ song }) => {
-  const title = song?.item?.name;
-  const songInfo = song?.item;
-  const songURL = songInfo?.uri;
-  const imageURL = songInfo?.album?.images[0]?.url;
-  const artistName = songInfo?.artists[0]?.name;
-  console.log(song?.item);
   return (
     <>
-      <SongInformationTile
-        name={title}
-        uri={songURL}
-        imageURL={imageURL}
-        artistName={artistName}
-      />
+      <Box sx={{ p: '5px', color: '#ffffff' }}>
+        <WelcomeHero />
+        <Image
+          src={'/headshot-no-bg.png'}
+          alt="Headshot without background"
+          width={300}
+          height={300}
+        />
+        <Stack
+          direction={{ xs: 'column', md: 'row' }}
+          justifyContent="center"
+          alignItems="center"
+          sx={{
+            color: '#ffffff',
+            padding: '1.5rem',
+          }}
+        >
+          <WebDevelopmentPillars />
+        </Stack>
+      </Box>
     </>
   );
 };

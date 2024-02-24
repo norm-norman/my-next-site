@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-import Image from 'next/image';
+
 // Page Sections
 import WelcomeHero from './sections/welcome-hero';
+import AboutMe from './sections/about-me';
 import WebDevelopmentPillars from './sections/web-development-pillars';
 
 const EntryComponent = ({ song }) => {
@@ -11,14 +12,8 @@ const EntryComponent = ({ song }) => {
     <>
       <Box sx={{ p: '5px', color: '#ffffff' }}>
         <WelcomeHero />
-        <Image
-          src={'/headshot-no-bg.png'}
-          alt="Headshot without background"
-          width={300}
-          height={300}
-        />
         <Stack
-          direction={{ xs: 'column', md: 'row' }}
+          spacing={12}
           justifyContent="center"
           alignItems="center"
           sx={{
@@ -26,6 +21,7 @@ const EntryComponent = ({ song }) => {
             padding: '1.5rem',
           }}
         >
+          <AboutMe />
           <WebDevelopmentPillars />
         </Stack>
       </Box>

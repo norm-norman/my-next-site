@@ -57,6 +57,7 @@ footer a {
 p {
   font-size: 1.5em;
   font-weight: 500;
+  color: #a2a2ab;
 }
 
 @media (max-width: 600px) {
@@ -64,4 +65,9 @@ p {
     width: 100%;
     flex-direction: column;
   }
+}
+
+#welcome-hero {
+  background-image: url('../public/forest-happy-couple-runaway.gif');
+  background-color: #a2a2ab;
 }

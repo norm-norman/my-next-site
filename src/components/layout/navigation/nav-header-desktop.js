@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
-import SiteLogoSVG from './site-logo-svg';
+import SiteLogoSVG from '../../images/site-logo-svg';
 import { styled } from '@mui/material/styles';
 import ButtonBase from '@mui/material/ButtonBase';
 
@@ -26,7 +26,6 @@ const NavigationHeaderDesktop = () => {
         width={'75vw'}
         alignItems={'center'}
         justifyContent={'end'}
-        fullWidth
       >
         <Grid item xs={6}>
           <SiteLogoSVG />

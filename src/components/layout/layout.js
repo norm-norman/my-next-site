@@ -1,5 +1,6 @@
-import NavigationHeaderDesktop from './nav-header-desktop';
-import NavigationHeaderMobile from './nav-header-mobile';
+import React from 'react';
+import NavigationHeaderDesktop from './navigation/nav-header-desktop';
+import NavigationHeaderMobile from './navigation/nav-header-mobile';
 import Footer from './footer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 

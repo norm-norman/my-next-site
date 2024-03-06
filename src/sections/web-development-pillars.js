@@ -1,4 +1,4 @@
-import ValuePropWithHeader from '../components/value-prop-with-header';
+import ValuePropWithHeader from '../components/text/value-prop-with-header';
 import Stack from '@mui/material/Stack';
 
 const pillarTexts = [
@@ -26,7 +26,8 @@ const WebDevelopmentPillars = () => {
         spacing={{ xs: 1, sm: 2 }}
         display="flex"
         justifyContent={'center'}
-        alignItems={'start'}
+        alignItems={'center'}
+        sx={{ paddingX: 2, textAlign: 'center' }}
       >
         <h1>My 3 Pillars of Great Web Development</h1>{' '}
         {pillarTexts.map(({ id, header, text }) => {

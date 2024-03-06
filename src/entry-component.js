@@ -36,7 +36,6 @@ const EntryComponent = () => {
             paddingX: getPaddingX(isLargeScreen),
           }}
         >
-          <AboutMe />
           <WebDevelopmentPillars />
         </Stack>
       </Box>

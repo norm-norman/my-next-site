@@ -1,5 +1,6 @@
 import NavigationHeaderDesktop from './nav-header-desktop';
 import NavigationHeaderMobile from './nav-header-mobile';
+import Footer from './footer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function Layout({ children }) {
@@ -15,6 +16,7 @@ export default function Layout({ children }) {
             <NavigationHeaderMobile />
           )}
           {children}
+          <Footer />
         </main>
       </div>
     </>

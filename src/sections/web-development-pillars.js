@@ -22,7 +22,12 @@ const pillarTexts = [
 const WebDevelopmentPillars = () => {
   return (
     <>
-      <Stack spacing={{ xs: 1, sm: 2 }} display="flex">
+      <Stack
+        spacing={{ xs: 1, sm: 2 }}
+        display="flex"
+        justifyContent={'center'}
+        alignItems={'start'}
+      >
         <h1>My 3 Pillars of Great Web Development</h1>{' '}
         {pillarTexts.map(({ id, header, text }) => {
           return <ValuePropWithHeader key={id} header={header} text={text} />;

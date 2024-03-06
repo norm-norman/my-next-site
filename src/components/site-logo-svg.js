@@ -5,6 +5,8 @@ const SiteLogoSVG = (props) => (
     width={287}
     height={225}
     fill="none"
+    id="site-logo"
+    viewBox={'0 0 auto auto'}
     {...props}
   >
     <g filter="url(#a)">

@@ -1,24 +1,39 @@
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Page Sections
 import WelcomeHero from './sections/welcome-hero';
 import AboutMe from './sections/about-me';
 import WebDevelopmentPillars from './sections/web-development-pillars';
 
-const EntryComponent = ({ song }) => {
+const getPaddingX = (isLargeScreen) => {
+  return isLargeScreen ? '25%' : '5%';
+};
+
+const EntryComponent = () => {
+  const isLargeScreen = useMediaQuery('(min-value:700px);');
   return (
     <>
-      <Box sx={{ p: '5px', color: '#ffffff' }}>
+      <div id="orb"></div>
+      <div id="orb2"></div>
+      <Box
+        sx={{
+          paddingX: getPaddingX(isLargeScreen),
+          color: '#ffffff',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
         <WelcomeHero />
         <Stack
           spacing={12}
           justifyContent="center"
-          alignItems="center"
+          alignItems="start"
           sx={{
             color: '#ffffff',
-            padding: '1.5rem',
+            paddingX: getPaddingX(isLargeScreen),
           }}
         >
           <AboutMe />

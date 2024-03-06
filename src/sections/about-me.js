@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -11,19 +11,15 @@ const styles = {
 const AboutMe = () => {
   const isLargeScreen = useMediaQuery('(min-width:800px)');
   return (
-    <div style={styles}>
+    <div id={'aboutMe'} style={styles}>
       <Stack
         direction={isLargeScreen ? 'row' : 'column'}
         justifyContent="center"
+        alignItems={'center'}
         spacing={60}
+        sx={{ color: '#fff' }}
       >
         <h2>About Me</h2>
-        <Image
-          src={'/headshot-no-bg-no-shadow.png'}
-          alt="Headshot without background"
-          width={300}
-          height={300}
-        />
       </Stack>
     </div>
   );

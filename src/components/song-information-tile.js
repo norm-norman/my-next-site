@@ -9,7 +9,7 @@ const SongInformationTile = ({ name, uri, imageURL, artistName }) => {
   return (
     <>
       <Stack alignItems={'center'} justifyContent={'center'} spacing={2}>
-        <Image src={imageURL} width={640} height={640} />
+        <Image src={imageURL} width={300} height={300} />
         <Tooltip title="You will need a spotify account to play this track.">
           <Button href={uri} variant="outlined">
             "{name}" by {artistName}

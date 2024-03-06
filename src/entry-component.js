@@ -1,23 +1,44 @@
-// import React from 'react';
-import SongInformationTile from './components/song-information-tile';
 import * as React from 'react';
-import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-const EntryComponent = ({ song }) => {
-  const title = song?.item?.name;
-  const songInfo = song?.item;
-  const songURL = songInfo?.uri;
-  const imageURL = songInfo?.album?.images[0]?.url;
-  const artistName = songInfo?.artists[0]?.name;
-  console.log(song?.item);
+// Page Sections
+import WelcomeHero from './sections/welcome-hero';
+import AboutMe from './sections/about-me';
+import WebDevelopmentPillars from './sections/web-development-pillars';
+
+const getPaddingX = (isLargeScreen) => {
+  return isLargeScreen ? '25%' : '0%';
+};
+
+const EntryComponent = () => {
+  const isLargeScreen = useMediaQuery('(min-value:700px);');
   return (
     <>
-      <SongInformationTile
-        name={title}
-        uri={songURL}
-        imageURL={imageURL}
-        artistName={artistName}
-      />
+      <div id="orb"></div>
+      <div id="orb2"></div>
+      <Box
+        sx={{
+          paddingX: getPaddingX(isLargeScreen),
+          color: '#ffffff',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <WelcomeHero />
+        <Stack
+          spacing={12}
+          justifyContent="center"
+          alignItems="start"
+          sx={{
+            color: '#ffffff',
+            paddingX: getPaddingX(isLargeScreen),
+          }}
+        >
+          <WebDevelopmentPillars />
+        </Stack>
+      </Box>
     </>
   );
 };

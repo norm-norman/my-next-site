@@ -9,7 +9,7 @@ import AboutMe from './sections/about-me';
 import WebDevelopmentPillars from './sections/web-development-pillars';
 
 const getPaddingX = (isLargeScreen) => {
-  return isLargeScreen ? '25%' : '5%';
+  return isLargeScreen ? '25%' : '0%';
 };
 
 const EntryComponent = () => {

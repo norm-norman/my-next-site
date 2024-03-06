@@ -86,7 +86,6 @@ p {
     position: relative;
     width: 200px;
     height: 200px;
-    padding-bottom: 0.5rem;
   }
 }
 
@@ -152,4 +151,8 @@ p {
     height: 25vw;
     top: 150%;
   }
+}
+
+#navigationButtons {
+  margin-left: auto;
 }

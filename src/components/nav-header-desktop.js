@@ -25,13 +25,14 @@ const NavigationHeaderDesktop = () => {
         spacing={5}
         width={'75vw'}
         alignItems={'center'}
+        justifyContent={'end'}
         fullWidth
       >
-        <Grid item xs="auto">
+        <Grid item xs={6}>
           <SiteLogoSVG />
         </Grid>
-        <Grid item xs="auto">
-          <Stack id="navButtons" alignItems={'start'}>
+        <Grid item xs={6} justifyContent={'end'}>
+          <Stack id="navigationButtons" alignItems={'end'}>
             <NavigationButtons variation={'text'} href={'#aboutMe'}>
               My Approach to Developement
             </NavigationButtons>

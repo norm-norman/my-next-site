@@ -8,18 +8,17 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 
 const TextInput = styled(TextField)({
-  boxShadow: '10px 5px 5px #040621',
   fontFamily: 'Neue Regrade',
   '& label.Mui-focused': {
     color: 'white',
   },
   '& .MuiOutlinedInput-root': {
-    borderColor: 'red',
     '& fieldset': {
       borderColor: '#fff',
+      borderWidth: '0 0 1px 0',
     },
     '&:hover fieldset': {
-      borderColor: '#fff',
+      borderColor: 'grey',
     },
     '&.Mui-focused fieldset': {
       borderColor: '#fff',
@@ -33,6 +32,16 @@ const TextInput = styled(TextField)({
   },
 });
 
+const SubmitButton = styled(Button)({
+  color: 'white',
+  borderColor: 'grey',
+  size: 'medium',
+  width: '50%',
+  '&:hover fieldset': {
+    borderColor: 'white',
+  },
+});
+
 const ContactForm = () => {
   const isLargeScreen = useMediaQuery('(min-width: 768px)');
 
@@ -40,7 +49,7 @@ const ContactForm = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult('aaaaaand');
+    setResult('Delivering');
     const formData = new FormData(event.target);
 
     formData.append('access_key', 'a65cff00-e7c2-47dd-9936-1edf258bea83');
@@ -70,10 +79,8 @@ const ContactForm = () => {
         display: 'grid',
         margin: isLargeScreen ? '10%' : '5%',
         width: isLargeScreen ? '35vw' : '75vw',
-        backgroundColor: '#010536',
         borderRadius: '10px',
-        boxShadow: '10px 5px #040621',
-        color: '#FFFFFF',
+        alignItems: 'center',
       }}
     >
       <Stack sx={{ padding: isLargeScreen ? '15%' : '10%' }} spacing={3}>
@@ -86,9 +93,9 @@ const ContactForm = () => {
           name="message"
           required
         />
-        <Button variant="outlined" type="submit">
-          {result || 'Sent!'}
-        </Button>
+        <SubmitButton variant="outlined" type="submit">
+          {result || 'Send'}
+        </SubmitButton>
       </Stack>
     </Box>
   );

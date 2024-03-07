@@ -1,5 +1,7 @@
-import ValuePropWithHeader from '../components/text/value-prop-with-header';
-import Stack from '@mui/material/Stack';
+import React from 'react';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import DevelopmentPillarCard from '../components/cards/development-pillar-card';
 
 const pillarTexts = [
   {
@@ -21,20 +23,26 @@ const pillarTexts = [
 
 const WebDevelopmentPillars = () => {
   return (
-    <>
-      <Stack
-        spacing={{ xs: 1, sm: 2 }}
-        display="flex"
-        justifyContent={'center'}
-        alignItems={'center'}
-        sx={{ paddingX: 2, textAlign: 'center' }}
-      >
+    <Grid
+      id={'methodology'}
+      container
+      display="flex"
+      alignItems={'stretch'}
+      justifyContent={'center'}
+      sx={{ paddingX: 2, textAlign: 'center', paddingBottom: '25px' }}
+    >
+      <Grid item md={12}>
         <h1>My 3 Pillars of Great Web Development</h1>{' '}
-        {pillarTexts.map(({ id, header, text }) => {
-          return <ValuePropWithHeader key={id} header={header} text={text} />;
-        })}
-      </Stack>
-    </>
+      </Grid>
+
+      {pillarTexts.map(({ id, header, text }) => {
+        return (
+          <Grid item sx={{ display: 'flex', padding: '10px' }}>
+            <DevelopmentPillarCard key={id} header={header} text={text} />{' '}
+          </Grid>
+        );
+      })}
+    </Grid>
   );
 };
 

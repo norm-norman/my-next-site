@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationHeaderDesktop from './navigation/nav-header-desktop';
+import NavigationHeader from './navigation/nav-header-desktop';
 import NavigationHeaderMobile from './navigation/nav-header-mobile';
 import Footer from './footer';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -11,11 +11,7 @@ export default function Layout({ children }) {
     <>
       <div className="container">
         <main>
-          {isLargeScreen ? (
-            <NavigationHeaderDesktop />
-          ) : (
-            <NavigationHeaderMobile />
-          )}
+          <NavigationHeader isLargeScreen={isLargeScreen} />
           {children}
           <Footer />
         </main>

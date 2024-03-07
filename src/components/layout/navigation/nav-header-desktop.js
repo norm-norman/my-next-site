@@ -17,9 +17,9 @@ const NavigationButtons = styled(ButtonBase)(({ theme }) => ({
   },
 }));
 
-const NavigationHeaderDesktop = () => {
+const NavigationHeader = ({ isLargeScreen }) => {
   return (
-    <Box sx={{ width: '100%', paddingX: '10%', paddingTop: '5%' }}>
+    <Box sx={{ paddingX: '10%', paddingTop: '5%' }}>
       <Grid
         container
         spacing={5}
@@ -31,24 +31,23 @@ const NavigationHeaderDesktop = () => {
           <SiteLogoSVG />
         </Grid>
         <Grid item xs={6} justifyContent={'end'}>
-          <Stack id="navigationButtons" alignItems={'end'}>
-            <NavigationButtons variation={'text'} href={'#aboutMe'}>
-              My Approach to Developement
-            </NavigationButtons>
-            <NavigationButtons variation={'text'} href={'#aboutMe'}>
-              Projects & Experience
-            </NavigationButtons>
-            <NavigationButtons variation={'text'} href={'#aboutMe'}>
-              Personal Life
-            </NavigationButtons>
-            <NavigationButtons variation={'text'} href={'#aboutMe'}>
-              Contact
-            </NavigationButtons>
-          </Stack>
+          {isLargeScreen && (
+            <Stack id="navigationButtons" alignItems={'end'}>
+              <NavigationButtons variation={'text'} href={'#methodology'}>
+                My Approach to Developement
+              </NavigationButtons>
+              <NavigationButtons variation={'text'} href={'#experience'}>
+                Professional Experience
+              </NavigationButtons>
+              <NavigationButtons variation={'text'} href={'#contact'}>
+                Contact
+              </NavigationButtons>
+            </Stack>
+          )}
         </Grid>
       </Grid>
     </Box>
   );
 };
 
-export default NavigationHeaderDesktop;
+export default NavigationHeader;

@@ -16,7 +16,7 @@ const EntryComponent = () => {
   const isLargeScreen = useMediaQuery('(min-value:700px);');
   return (
     <>
-      <div id="orb"></div>
+      {isLargeScreen && <div id="orb"></div>}
       <div id="orb2"></div>
       <Box
         sx={{

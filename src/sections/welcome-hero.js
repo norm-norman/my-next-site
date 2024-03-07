@@ -28,10 +28,11 @@ const getLayoutProps = (isLargeScreen) => {
         textFlexAlignItems: 'start',
       }
     : {
+        paddingTop: '25vh',
         imageSize: 400,
         typographyLevel: 'h2',
         textStackDirection: 'column',
-        height: '100vh',
+        minHeight: '100vh',
         textFlexAlignItems: 'center',
       };
 };

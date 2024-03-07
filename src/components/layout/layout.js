@@ -11,7 +11,7 @@ export default function Layout({ children }) {
     <>
       <div className="container">
         <main>
-          <NavigationHeader isLargeScreen={isLargeScreen} />
+          {isLargeScreen && <NavigationHeader isLargeScreen={isLargeScreen} />}
           {children}
           <Footer />
         </main>

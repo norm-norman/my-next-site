@@ -86,12 +86,6 @@ p {
   }
 }
 
-@media (max-height: 910px) {
-  #cartoonProfessionalMeWrapper {
-    position: relative;
-  }
-}
-
 #cartoonProfessionalMeWrapper {
   z-index: 1;
 }

@@ -29,6 +29,8 @@ const professionalTimelineInformation = [
     teams: 'Design Services',
   },
 ];
+
+// TODO: clean this up and add a popout with info about the clicked on job
 const ProfessionalTimeline = () => {
   return (
     <Timeline position="alternate" width="100%">

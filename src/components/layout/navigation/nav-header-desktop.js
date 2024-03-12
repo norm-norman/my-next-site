@@ -4,8 +4,7 @@ import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import SiteLogoSVG from '../../images/site-logo-svg';
 import NavigationButtons from './navigation-buttons';
-import SocialMediaIconButtons from '../../buttons/social-media-icon-buttons';
-const NavigationHeader = () => {
+const NavigationHeaderDesktop = () => {
   return (
     <Box sx={{ paddingX: '10%', paddingTop: '5%' }}>
       <Grid
@@ -28,4 +27,4 @@ const NavigationHeader = () => {
   );
 };
 
-export default NavigationHeader;
+export default NavigationHeaderDesktop;

@@ -11,7 +11,7 @@ const getStyles = (isLargeScreen) => {
     height: getLayoutProps(isLargeScreen).height,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: getLayoutProps(isLargeScreen).paddingTop,
+    paddingTop: '5vh',
   };
 
   return styles;
@@ -20,7 +20,6 @@ const getStyles = (isLargeScreen) => {
 const getLayoutProps = (isLargeScreen) => {
   return isLargeScreen
     ? {
-        paddingTop: '5vh',
         imageSize: 500,
         typographyLevel: 'h1',
         textStackDirection: 'row',
@@ -28,7 +27,6 @@ const getLayoutProps = (isLargeScreen) => {
         textFlexAlignItems: 'start',
       }
     : {
-        paddingTop: '25vh',
         imageSize: 400,
         typographyLevel: 'h2',
         textStackDirection: 'column',

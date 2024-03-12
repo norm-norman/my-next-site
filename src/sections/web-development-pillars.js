@@ -1,8 +1,14 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import ScrollingBackgroundText from '../components/text/background-text';
+import ScrollingTextLines from '../components/text/background-text';
 import DevelopmentPillarCard from '../components/cards/development-pillar-card';
+
+const textProps = [
+  { text: 'Ways of Working', color: 'grey', left: 0 },
+  { text: 'Methodology', color: '#1EC296', left: 5 },
+  { text: 'Pillars of Great Development', color: '#D6D6D6', left: 10 },
+];
 
 const pillarTexts = [
   {
@@ -28,19 +34,22 @@ const WebDevelopmentPillars = () => {
     {
       speed: 49,
       direction: 1,
+      textProps,
     },
     {
       speed: 34,
       direction: -1,
+      textProps,
     },
     {
       speed: 24,
       direction: 1,
+      textProps,
     },
   ];
   return (
     <div id={'methodology'}>
-      {!isSmallScreen && <ScrollingBackgroundText lineProps={lineProps} />}
+      {!isSmallScreen && <ScrollingTextLines lineProps={lineProps} />}
       <Grid
         container
         display="flex"
@@ -48,15 +57,15 @@ const WebDevelopmentPillars = () => {
         justifyContent={'center'}
         sx={{
           paddingX: 2,
+          paddingBottom: 6,
           textAlign: 'center',
-          paddingBottom: '25px',
           marginTop: '5em',
         }}
       >
         {pillarTexts.map(({ id, header, text }) => {
           return (
-            <Grid item sx={{ display: 'flex', padding: '10px' }}>
-              <DevelopmentPillarCard key={id} header={header} text={text} />{' '}
+            <Grid key={id} item sx={{ display: 'flex', padding: '10px' }}>
+              <DevelopmentPillarCard header={header} text={text} />{' '}
             </Grid>
           );
         })}

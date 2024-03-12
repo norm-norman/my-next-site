@@ -2,13 +2,7 @@ import React from 'react';
 import Ticker from 'framer-motion-ticker';
 import Typography from '@mui/joy/Typography';
 
-const ScrollingBackgroundText = ({ lineProps }) => {
-  const texts = [
-    { text: 'Ways of Working', color: 'grey', left: 0 },
-    { text: 'Methodology', color: '#1EC296', left: 5 },
-    { text: 'Pillars of Great Development', color: '#D6D6D6', left: 10 },
-  ];
-
+const ScrollingTextLines = ({ lineProps }) => {
   return (
     <div
       style={{
@@ -16,11 +10,11 @@ const ScrollingBackgroundText = ({ lineProps }) => {
         left: '1vw',
       }}
     >
-      {lineProps.map(({ speed, direction }) => {
+      {lineProps.map(({ speed, direction, textProps }) => {
         return (
           <div key={`${speed}-row`} style={{ position: 'relative' }}>
             <Ticker duration={speed} direction={direction}>
-              {texts.map((item, index) => (
+              {textProps.map((item, index) => (
                 <div
                   key={index}
                   style={{
@@ -41,11 +35,4 @@ const ScrollingBackgroundText = ({ lineProps }) => {
   );
 };
 
-export default ScrollingBackgroundText;
-
-/**
- * speeds:
- * 49,34,24
- *
- * directions: 1, -1, 1
- */
+export default ScrollingTextLines;

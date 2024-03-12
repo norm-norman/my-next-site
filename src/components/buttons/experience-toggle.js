@@ -1,6 +1,6 @@
 import React from 'react';
 // mui imports
-import ToggleButton, { toggleButtonClasses } from '@mui/material/ToggleButton';
+import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup, {
   toggleButtonGroupClasses,
 } from '@mui/material/ToggleButtonGroup';
@@ -25,8 +25,9 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 }));
 
 const StyledToggleButton = styled(ToggleButton)(({ theme }) => ({
-  [`& .${toggleButtonClasses.selected}`]: {
+  '&.Mui-selected, &.Mui-selected:hover': {
     color: 'white',
+    backgroundColor: '#white',
   },
 }));
 
@@ -40,7 +41,7 @@ const ExperienceToggle = ({ activeExperienceType, onChangeCallback }) => {
       aria-label="experience-toggle"
     >
       <StyledToggleButton value="professional" default>
-        Professional Experience
+        Professional & Academic
       </StyledToggleButton>
       <StyledToggleButton value="projects">Projects</StyledToggleButton>
     </StyledToggleButtonGroup>

@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 
 // mui imports
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { Button, useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
+import SendIcon from '@mui/icons-material/Send';
+
+const inputTexts = {
+  email: 'Your Email',
+  name: 'Your Name',
+  message: 'Your message',
+};
+
+const buttonTexts = { send: 'Send', sending: 'Sending...', success: 'Sent!' };
 
 const TextInput = styled(TextField)({
   fontFamily: 'Neue Regrade',
+  backgroundColor: '#080E21',
+  boxShadow: '0 8px 16px 0 rgba(0,0,0,0.4)',
   '& label.Mui-focused': {
     color: 'white',
   },
@@ -49,11 +60,11 @@ const ContactForm = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult('Delivering');
+    setResult(buttonTexts.sending);
     const formData = new FormData(event.target);
 
     formData.append('access_key', 'a65cff00-e7c2-47dd-9936-1edf258bea83');
-    formData.append('subject', 'TESTING WEB FORM');
+    formData.append('subject', 'EMAIL FROM WEBSITE');
 
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -61,9 +72,9 @@ const ContactForm = () => {
     });
 
     const data = await response.json();
-
+    // TODO: change to alternate output with button to return to form
     if (data.success) {
-      setResult('Sent!');
+      setResult(buttonTexts.sent);
       event.target.reset();
     } else {
       console.log('Error', data);
@@ -84,17 +95,17 @@ const ContactForm = () => {
       }}
     >
       <Stack sx={{ padding: isLargeScreen ? '15%' : '10%' }} spacing={3}>
-        <TextInput label="Your Email" name="email" required />
-        <TextInput label="Your name" name="name" required />
+        <TextInput label={inputTexts.email} name={inputTexts.email} required />
+        <TextInput label={inputTexts.name} name={inputTexts.name} required />
         <TextInput
           multiline
           rows={4}
-          label="Your Message"
-          name="message"
+          label={inputTexts.message}
+          name={inputTexts.message}
           required
         />
-        <SubmitButton variant="outlined" type="submit">
-          {result || 'Send'}
+        <SubmitButton variant="contained" endIcon={<SendIcon />} type="submit">
+          {result || buttonTexts.send}
         </SubmitButton>
       </Stack>
     </Box>

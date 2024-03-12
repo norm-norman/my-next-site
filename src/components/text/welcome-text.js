@@ -7,6 +7,8 @@ import HeadingText from '../text/heading-text';
 import SocialMediaIconButtons from '../buttons/social-media-icon-buttons';
 import DownloadResumeButton from '../buttons/resume-download-button';
 
+const welcomeText = "Hi I'm Norm. Let's Meet.";
+
 const WelcomeTextAndButtons = ({
   isSmallestScreen,
   textFlexAlignItems,
@@ -18,10 +20,7 @@ const WelcomeTextAndButtons = ({
       justifyContent={'center'}
       spacing={3}
     >
-      <HeadingText
-        level={headingTypographyLevel}
-        text={"Hi I'm Norm. Let's Meet."}
-      />
+      <HeadingText level={headingTypographyLevel} text={welcomeText} />
       <p>Full-Stack Web Developer. Innovator. Human.</p>
 
       <DownloadResumeButton isSmallestScreen={isSmallestScreen} />

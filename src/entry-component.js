@@ -5,8 +5,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Page Sections
 import WelcomeHero from './sections/welcome-hero';
-import AboutMe from './sections/about-me';
 import WebDevelopmentPillars from './sections/web-development-pillars';
+import Experience from './sections/experience';
 
 const getPaddingX = (isLargeScreen) => {
   return isLargeScreen ? '25%' : '0%';
@@ -16,8 +16,6 @@ const EntryComponent = () => {
   const isLargeScreen = useMediaQuery('(min-value:700px);');
   return (
     <>
-      {isLargeScreen && <div id="orb"></div>}
-      <div id="orb2"></div>
       <Box
         sx={{
           paddingX: getPaddingX(isLargeScreen),
@@ -37,6 +35,7 @@ const EntryComponent = () => {
           }}
         >
           <WebDevelopmentPillars />
+          <Experience />
         </Stack>
       </Box>
     </>

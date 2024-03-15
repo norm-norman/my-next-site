@@ -1,8 +1,13 @@
 import React from 'react';
+
+// mui imports
 import Grid from '@mui/material/Grid';
 import useMediaQuery from '@mui/material/useMediaQuery';
+
+// component imports
 import ScrollingTextLines from '../components/text/background-text';
 import DevelopmentPillarCard from '../components/cards/development-pillar-card';
+import HeadingText from '../components/text/heading-text';
 
 const textProps = [
   { text: 'Ways of Working', color: 'grey', left: 0 },
@@ -49,7 +54,13 @@ const WebDevelopmentPillars = () => {
   ];
   return (
     <div id={'methodology'}>
-      {!isSmallScreen && <ScrollingTextLines lineProps={lineProps} />}
+      {!isSmallScreen ? (
+        <ScrollingTextLines lineProps={lineProps} />
+      ) : (
+        <div sx={{ paddingBottom: 4, textAlign: 'start' }}>
+          <HeadingText level={'h4'} text={'Methodology'} />
+        </div>
+      )}
       <Grid
         container
         display="flex"

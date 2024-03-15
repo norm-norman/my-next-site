@@ -4,16 +4,18 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import ButtonBase from '@mui/material/ButtonBase';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/joy/Typography';
 
 import { openInNewTab } from '../../utils/open-in-new-tab';
 
 const ResumeButton = styled(ButtonBase)(({ theme }) => ({
-  padding: '15px',
+  padding: '10px',
   margin: '2.0em',
-  border: '2px solid white',
+  border: '1px solid white',
   borderRadius: '8px',
   fontFamily: 'Neue Regrade',
-  fontSize: '1.5em',
+  fontSize: '1.2em',
 }));
 
 const DownloadResumeButton = ({ isSmallestScreen }) => {
@@ -23,8 +25,10 @@ const DownloadResumeButton = ({ isSmallestScreen }) => {
       target="_blank"
       download
     >
-      View My Resume
-      {!isSmallestScreen && <OpenInNewIcon />}
+      <Stack direction="row" spacing={2} alignItems="center">
+        <Typography level="p">My Resume</Typography>
+        {!isSmallestScreen && <OpenInNewIcon />}
+      </Stack>
     </ResumeButton>
   );
 };

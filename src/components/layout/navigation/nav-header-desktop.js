@@ -15,8 +15,8 @@ const NavigationHeader = () => {
         alignItems={'center'}
         justifyContent={'end'}
       >
-        <Grid item xs={6}>
-          <SiteLogoSVG />
+        <Grid item xs={6} sx={{ display: 'hidden' }}>
+          {/* <SiteLogoSVG /> */}
         </Grid>
         <Grid item xs={6} justifyContent={'end'}>
           <Stack id="navigationButtons" alignItems={'end'}>

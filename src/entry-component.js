@@ -5,6 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Page Sections
 import WelcomeHero from './sections/welcome-hero';
+import AboutMe from './sections/about-me';
 import WebDevelopmentPillars from './sections/web-development-pillars';
 import Experience from './sections/experience';
 
@@ -26,7 +27,7 @@ const EntryComponent = () => {
       >
         <WelcomeHero />
         <Stack
-          spacing={12}
+          spacing={16}
           justifyContent="center"
           alignItems="start"
           sx={{
@@ -34,6 +35,7 @@ const EntryComponent = () => {
             paddingX: getPaddingX(isLargeScreen),
           }}
         >
+          <AboutMe />
           <WebDevelopmentPillars />
           <Experience />
         </Stack>

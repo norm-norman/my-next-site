@@ -1,8 +1,12 @@
 import React from 'react';
-import ValuePropWithHeader from '../text/value-prop-with-header';
+
+// mui imports
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+
+// component imports
+import ValuePropWithHeader from '../text/value-prop-with-header';
 
 const DevelopmentPillarCard = ({ key, header, text }) => {
   return (

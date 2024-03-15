@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import { useMediaQuery } from '@mui/material';
 
 const Footer = () => {
-  const isLargeScreen = useMediaQuery('(min-width:1672px)');
+  const isLargeScreen = useMediaQuery('(min-width:1000px)');
   return (
     <Stack
       id={'contact'}

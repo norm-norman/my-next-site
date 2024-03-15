@@ -3,12 +3,11 @@ import React from 'react';
 // mui imports
 import Box from '@mui/material/Box';
 import Image from 'next/image';
-import Tooltip from '@mui/material/Tooltip';
-import Fade from '@mui/material/Fade';
 
 const CartoonMe = ({ id, url, size, isSmallestScreen }) => {
   return (
     <Box id={`${id}Wrapper`} alignItems={'center'} justifyContent={'center'}>
+<<<<<<< Updated upstream
       <Tooltip
         disableFocusListener
         followCursor
@@ -27,6 +26,18 @@ const CartoonMe = ({ id, url, size, isSmallestScreen }) => {
           />
         )}
       </Tooltip>
+=======
+      {!isSmallestScreen && (
+        <Image
+          priority={priority}
+          id={id}
+          src={url}
+          alt="Cartoon picture of myself"
+          width={size}
+          height={size * 0.9}
+        />
+      )}
+>>>>>>> Stashed changes
     </Box>
   );
 };

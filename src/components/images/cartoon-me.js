@@ -4,7 +4,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Image from 'next/image';
 
-const CartoonMe = ({ id, url, size, isSmallestScreen }) => {
+const CartoonMe = ({ priority, id, url, size, isSmallestScreen }) => {
   return (
     <Box id={`${id}Wrapper`} alignItems={'center'} justifyContent={'center'}>
 <<<<<<< Updated upstream
@@ -18,6 +18,7 @@ const CartoonMe = ({ id, url, size, isSmallestScreen }) => {
       >
         {!isSmallestScreen && (
           <Image
+            priority={priority}
             id={id}
             src={url}
             alt="Cartoon picture of myself"

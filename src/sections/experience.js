@@ -5,6 +5,9 @@ import Stack from '@mui/material/Stack';
 // component imports
 import ExperienceToggle from '../components/buttons/experience-toggle';
 import ProfessionalTimeline from '../components/professional-timeline';
+import HeadingText from '../components/text/heading-text';
+import ProjectGrid from '../components/project-grid';
+
 const Experience = () => {
   const [activeExperienceType, setActiveExperienceType] =
     useState('professional');
@@ -16,7 +19,6 @@ const Experience = () => {
   };
 
   return (
-<<<<<<< Updated upstream
     <Stack
       id="experience"
       direction="column"
@@ -33,7 +35,6 @@ const Experience = () => {
       />
       {activeExperienceType === 'professional' && <ProfessionalTimeline />}
     </Stack>
-=======
     <div style={{ margin: 'auto', width: '60%' }}>
       <Stack
         id="experience"
@@ -56,7 +57,6 @@ const Experience = () => {
         {activeExperienceType === 'projects' && <ProjectGrid />}
       </Stack>
     </div>
->>>>>>> Stashed changes
   );
 };
 

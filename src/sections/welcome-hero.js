@@ -63,6 +63,7 @@ const WelcomeHero = () => {
             }
           />
           <CartoonMe
+            priority={true}
             id={'cartoonProfessionalMe'}
             url={'/me/professional-cartoon-me-with-shadow.png'}
             size={getLayoutProps(isLargeScreen).imageSize}

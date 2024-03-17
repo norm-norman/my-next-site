@@ -4,12 +4,23 @@ import React, { useState } from 'react';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
-import ButtonBase from '@mui/material/ButtonBase';
 
 // component imports
-import NavigationButtons from './navigation-buttons';
+import NavigationButtons from '../../buttons/navigation-buttons';
 import SocialMediaIconButtons from '../../buttons/social-media-icon-buttons';
+
+const StylizedAppBar = styled(AppBar)(({ theme }) => ({
+  backgroundColor: '#0a1128',
+  opacity: '100%',
+  boxShadow: 'none',
+  display: 'flex',
+  alignItems: 'end',
+  paddingRight: '5vw',
+  paddingTop: '3vh',
+  zIndex: 100,
+}));
 
 const drawerStyles = {
   backgroundColor: '#001F54',
@@ -38,14 +49,16 @@ const NavigationHeaderMobile = () => {
         flexDirection: 'row-reverse',
       }}
     >
-      <IconButton
-        color="inherit"
-        aria-label="open drawer"
-        onClick={toggleDrawer(true)}
-        size="large"
-      >
-        <MenuIcon />
-      </IconButton>
+      <StylizedAppBar component="nav">
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={toggleDrawer(true)}
+          size="large"
+        >
+          <MenuIcon />
+        </IconButton>
+      </StylizedAppBar>
       <SwipeableDrawer
         anchor={'right'}
         open={isDrawerOpen}

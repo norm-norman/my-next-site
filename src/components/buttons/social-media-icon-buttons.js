@@ -14,11 +14,10 @@ const SocialMediaIconButton = styled(ButtonBase)(({ theme }) => ({
   color: 'white',
 }));
 
-export const GithubButton = () => {
+export const GithubButton = ({ link }) => {
+  const githubLink = link || 'https://github.com/norm-norman';
   return (
-    <SocialMediaIconButton
-      onClick={() => openInNewTab('https://github.com/norm-norman')}
-    >
+    <SocialMediaIconButton onClick={() => openInNewTab(githubLink)}>
       <GitHubIcon fontSize="large" />
     </SocialMediaIconButton>
   );

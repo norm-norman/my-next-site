@@ -8,7 +8,10 @@ import SkillPill from './skill-pill';
 
 const SkillPillGrid = ({ skills }) => {
   return (
-    <Grid container>
+    <Grid
+      container
+      sx={{ padding: 0.1, textAlign: 'center', justifyContent: 'center' }}
+    >
       {skills.map((skill) => {
         return (
           <Grid key={skill} item sx={{ padding: 1 }}>

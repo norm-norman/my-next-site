@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 // component imports
-import SkillsGroup from '../components/cards/skills-card';
+import SkillsGroup from '../components/cards/skills-card-group';
 
 const styles = {
   justifyContent: 'center',
@@ -20,9 +20,9 @@ const AboutMe = () => {
       <Stack
         direction={isLargeScreen ? 'row' : 'column'}
         justifyContent="center"
-        alignItems={'center'}
+        alignItems="center"
         spacing={6}
-        sx={{ color: '#fff' }}
+        sx={{ color: '#fff', paddingTop: isLargeScreen ? '10vh' : '0' }}
       >
         <div
           style={{

@@ -1,6 +1,6 @@
 import React from 'react';
 import SocialMediaIconButtons from '../buttons/social-media-icon-buttons';
-import ContactForm from '../contact-form';
+import ContactForm from './contact-form';
 import HeadingText from '../text/heading-text';
 import Stack from '@mui/material/Stack';
 import { useMediaQuery } from '@mui/material';

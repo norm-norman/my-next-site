@@ -3,6 +3,7 @@ import React from 'react';
 const styles = {
   color: '#ffffff',
   flexBasis: '100%',
+  textAlign: 'center',
 };
 const ValuePropWithHeader = ({ header, text }) => {
   return (

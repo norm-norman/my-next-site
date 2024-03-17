@@ -37,7 +37,7 @@ const EntryComponent = () => {
         >
           <AboutMe />
           <WebDevelopmentPillars />
-          <Experience />
+          <Experience isLargeScreen={isLargeScreen} />
         </Stack>
       </Box>
     </>

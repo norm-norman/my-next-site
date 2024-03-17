@@ -6,7 +6,6 @@ import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -14,7 +13,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 // dynamically import this card to avoid hydration error
 // without this -> mismatch in what server and client loads
 const SelectableTimelineCard = dynamic(
-  () => import('../components/cards/selectable-timeline-card'),
+  () => import('../cards/selectable-timeline-card'),
   {
     ssr: false,
   }
@@ -104,7 +103,6 @@ const ProfessionalTimeline = () => {
                 logoSrc={logoSrc}
                 positionData={positionData}
               />
-
             </TimelineItem>
           );
         }

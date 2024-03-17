@@ -6,7 +6,6 @@ import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -14,7 +13,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 // dynamically import this card to avoid hydration error
 // without this -> mismatch in what server and client loads
 const SelectableTimelineCard = dynamic(
-  () => import('../components/cards/selectable-timeline-card'),
+  () => import('../cards/selectable-timeline-card'),
   {
     ssr: false,
   }
@@ -22,9 +21,13 @@ const SelectableTimelineCard = dynamic(
 
 const professionalTimelineInformation = [
   {
-    logoSrc: 'bu_logo.png',
-    company: 'Boston University',
-    title: 'B.S. in Computer Engineering',
+    date: '2020 - Present',
+    logoSrc: 'wayfair_logo.png',
+    company: 'Wayfair',
+    title: 'Software Engineer I & II',
+    positionData: {
+      products: 'Registry, Lists, Design Services',
+    },
   },
   {
     date: '2019',
@@ -36,13 +39,9 @@ const professionalTimelineInformation = [
     },
   },
   {
-    date: '2020 - Present',
-    logoSrc: 'wayfair_logo.png',
-    company: 'Wayfair',
-    title: 'Software Engineer I & II',
-    positionData: {
-      products: 'Registry, Lists, Design Services',
-    },
+    logoSrc: 'bu_logo.png',
+    company: 'Boston University',
+    title: 'B.S. in Computer Engineering',
   },
 ];
 
@@ -91,25 +90,23 @@ const ProfessionalTimeline = () => {
         minWidth: isLargeScreen ? '500px' : '350px',
       }}
     >
-      {professionalTimelineInformation
-        .reverse()
-        .map(
-          ({ date, company, title, teams, logoSrc, positionData }, index) => {
-            return (
-              <TimelineItem key={index} sx={{ fontFamily: 'Neue Regrade' }}>
-                <TimelineLineNode />
-                <TimelineContentNode
-                  company={company}
-                  title={title}
-                  teams={teams}
-                  date={date}
-                  logoSrc={logoSrc}
-                  positionData={positionData}
-                />
-              </TimelineItem>
-            );
-          }
-        )}
+      {professionalTimelineInformation.map(
+        ({ date, company, title, teams, logoSrc, positionData }, index) => {
+          return (
+            <TimelineItem key={index} sx={{ fontFamily: 'Neue Regrade' }}>
+              <TimelineLineNode />
+              <TimelineContentNode
+                company={company}
+                title={title}
+                teams={teams}
+                date={date}
+                logoSrc={logoSrc}
+                positionData={positionData}
+              />
+            </TimelineItem>
+          );
+        }
+      )}
     </Timeline>
   );
 };

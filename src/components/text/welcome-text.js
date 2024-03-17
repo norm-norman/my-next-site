@@ -21,7 +21,7 @@ const WelcomeTextAndButtons = ({
       spacing={3}
     >
       <HeadingText level={headingTypographyLevel} text={welcomeText} />
-      <p>Full-Stack Web Developer. Innovator. Human.</p>
+      <p style={{ paddingLeft: 0 }}>Full-Stack Web Developer</p>
 
       <DownloadResumeButton isSmallestScreen={isSmallestScreen} />
       <SocialMediaIconButtons />

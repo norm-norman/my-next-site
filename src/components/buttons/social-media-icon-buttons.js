@@ -14,6 +14,15 @@ const SocialMediaIconButton = styled(ButtonBase)(({ theme }) => ({
   color: 'white',
 }));
 
+export const GithubButton = ({ link }) => {
+  const githubLink = link || 'https://github.com/norm-norman';
+  return (
+    <SocialMediaIconButton onClick={() => openInNewTab(githubLink)}>
+      <GitHubIcon fontSize="large" />
+    </SocialMediaIconButton>
+  );
+};
+
 const SocialMediaIconButtons = () => {
   return (
     <Stack direction={'row'}>
@@ -22,11 +31,7 @@ const SocialMediaIconButtons = () => {
       >
         <LinkedInIcon fontSize="large" />
       </SocialMediaIconButton>
-      <SocialMediaIconButton
-        onClick={() => openInNewTab('https://github.com/norm-norman')}
-      >
-        <GitHubIcon fontSize="large" />
-      </SocialMediaIconButton>
+      <GithubButton />
     </Stack>
   );
 };

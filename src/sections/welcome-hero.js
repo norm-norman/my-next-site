@@ -12,24 +12,25 @@ const getStyles = (isLargeScreen) => {
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: '5vh',
+    paddingBottom: '15vh',
   };
 
   return styles;
 };
 
-const getLayoutProps = (isLargeScreen) => {
+const getLayoutProps = ({ isLargeScreen, isMidSizeScreen }) => {
   return isLargeScreen
     ? {
         imageSize: 500,
         typographyLevel: 'h1',
         textStackDirection: 'row',
-        height: '80vh',
+        height: '70vh',
         textFlexAlignItems: 'start',
       }
     : {
         imageSize: 400,
         typographyLevel: 'h2',
-        textStackDirection: 'column',
+        textStackDirection: isMidSizeScreen ? 'row' : 'column',
         minHeight: '100vh',
         textFlexAlignItems: 'center',
       };
@@ -37,12 +38,16 @@ const getLayoutProps = (isLargeScreen) => {
 
 const WelcomeHero = () => {
   const isLargeScreen = useMediaQuery('(min-width:1672px)');
+  const isMidSizeScreen = useMediaQuery('(min-width:1000px)');
   const isSmallestScreen = useMediaQuery('(max-width:280px)');
   return (
     <div style={getStyles(isLargeScreen)} className="welcome-hero">
       <Stack alignItems={'center'} justifyContent={'center'} spacing={10}>
         <Stack
-          direction={getLayoutProps(isLargeScreen).textStackDirection}
+          direction={
+            getLayoutProps({ isLargeScreen, isMidSizeScreen })
+              .textStackDirection
+          }
           alignItems={'center'}
           justifyContent={'center'}
           spacing={3}
@@ -50,10 +55,11 @@ const WelcomeHero = () => {
           <WelcomeTextAndButtons
             isSmallestScreen={isSmallestScreen}
             textFlexAlignItems={
-              getLayoutProps(isLargeScreen).textFlexAlignItems
+              getLayoutProps({ isLargeScreen, isMidSizeScreen })
+                .textFlexAlignItems
             }
             headingTypographyLevel={
-              getLayoutProps(isLargeScreen).typographyLevel
+              getLayoutProps({ isLargeScreen, isMidSizeScreen }).typographyLevel
             }
           />
           <CartoonMe

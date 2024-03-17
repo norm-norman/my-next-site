@@ -1,9 +1,10 @@
 import React from 'react';
+import Image from 'next/image';
+
+// mui imports
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import Stack from '@mui/material/Stack';
-import Image from 'next/image';
 
 const SongInformationTile = ({ name, uri, imageURL, artistName }) => {
   return (

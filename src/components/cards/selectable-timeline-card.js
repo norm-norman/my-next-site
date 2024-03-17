@@ -17,7 +17,6 @@ const ExpandMore = styled((props) => {
 })(({ theme, expand }) => ({
   color: 'white',
   display: 'flex',
-  paddingBottom: '0px',
   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
   marginLeft: 'auto',
   transition: theme.transitions.create('transform', {
@@ -38,7 +37,6 @@ const SelectableTimelineCard = ({
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   return (
     <Card
       key={key}
@@ -54,7 +52,7 @@ const SelectableTimelineCard = ({
         color: 'white',
       }}
     >
-      <CardActionArea>
+      <CardActionArea disableRipple disabled={!positionData}>
         <CardContent>
           <div
             style={{
@@ -78,18 +76,18 @@ const SelectableTimelineCard = ({
           <Typography sx={{ fontFamily: 'Neue Regrade' }} variant="h6">
             {title}
           </Typography>
-          {positionData && (
-            <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </ExpandMore>
-          )}
         </CardContent>
       </CardActionArea>
+      {positionData && (
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+      )}
       {positionData && (
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>

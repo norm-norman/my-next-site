@@ -16,6 +16,7 @@ const ProjectCarousel = ({ projectData }) => {
   const maxSteps = projectData.length;
 
   const handleNext = () => {
+    // add check for infinite looping
     if (activeStep + 1 === maxSteps) {
       setActiveStep(0);
     } else {
@@ -24,6 +25,7 @@ const ProjectCarousel = ({ projectData }) => {
   };
 
   const handleBack = () => {
+    // add check for infinite looping
     if (activeStep - 1 < 0) {
       setActiveStep(maxSteps - 1);
     } else {
@@ -40,6 +42,7 @@ const ProjectCarousel = ({ projectData }) => {
           flexDirection: 'row',
           alignItems: 'center',
           width: '90vw',
+          maxWidth: '548px',
         }}
       >
         <Grid

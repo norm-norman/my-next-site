@@ -5,24 +5,12 @@ import Image from 'next/image';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import { styled } from '@mui/material/styles';
+import CardActionArea from '@mui/material/CardActionArea';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  color: 'white',
-  display: 'flex',
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+// component imports
+import ExpandMore from '../custom-stylized/expand-collapse-toggle';
 
 const SelectableTimelineCard = ({
   company,
@@ -37,6 +25,7 @@ const SelectableTimelineCard = ({
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
   return (
     <Card
       key={key}
@@ -94,6 +83,14 @@ const SelectableTimelineCard = ({
             <Typography level="body1" sx={{ fontFamily: 'Neue Regrade' }}>
               Products: {positionData.products}
             </Typography>
+            <Typography sx={{ fontFamily: 'Neue Regrade' }} variant="h6">
+              Achievements & Responsibilites
+            </Typography>
+            <ul>
+              {positionData?.resumeBullets.map((bullet) => {
+                return <li>{bullet}</li>;
+              })}
+            </ul>
           </CardContent>
         </Collapse>
       )}

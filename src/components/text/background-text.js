@@ -1,13 +1,14 @@
 import React from 'react';
 import Ticker from 'framer-motion-ticker';
+
+// mui imports
 import Typography from '@mui/joy/Typography';
 
 const ScrollingTextLines = ({ lineProps }) => {
   return (
     <div
       style={{
-        maxWidth: '97vw',
-        left: '1vw',
+        maxWidth: '98vw',
       }}
     >
       {lineProps.map(({ speed, direction, textProps }) => {
@@ -24,7 +25,7 @@ const ScrollingTextLines = ({ lineProps }) => {
                     opacity: '0.5',
                   }}
                 >
-                  <Typography level={'h5'}>{item.text}</Typography>
+                  <Typography level="h5">{item.text}</Typography>
                 </div>
               ))}
             </Ticker>

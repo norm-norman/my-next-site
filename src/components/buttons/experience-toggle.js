@@ -26,8 +26,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 
 const StyledToggleButton = styled(ToggleButton)(({ theme }) => ({
   '&.Mui-selected, &.Mui-selected:hover': {
-    color: 'white',
-    backgroundColor: '#white',
+    color: '#47B09D',
   },
 }));
 

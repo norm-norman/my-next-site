@@ -19,7 +19,9 @@ const SkillsGroup = ({ isLargeScreen, skillsByCategory }) => {
         backgroundColor: '#080E21',
         boxShadow: '0 8px 16px 0 rgba(0,0,0,0.4)',
         borderRadius: '10px',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
+        minWidth: isLargeScreen ? '896px' : '96px',
+        maxWidth: '1100px',
       }}
     >
       <Stack direction={isLargeScreen ? 'row' : 'column'}>

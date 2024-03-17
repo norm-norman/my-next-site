@@ -38,11 +38,11 @@ const skillsByCategory = [
 ];
 
 const AboutMe = () => {
-  const isLargeScreen = useMediaQuery('(min-width:800px)');
+  const isLargeScreen = useMediaQuery('(min-width:950px)');
   return (
     <div id={'aboutMe'} style={styles}>
       <Stack
-        direction={isLargeScreen ? 'row' : 'column'}
+        direction={isLargeScreen ? 'column' : 'column'}
         justifyContent="center"
         alignItems="center"
         spacing={6}

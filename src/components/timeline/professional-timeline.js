@@ -1,23 +1,13 @@
 import * as React from 'react';
-import dynamic from 'next/dynamic';
 
 // mui imports
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-// dynamically import this card to avoid hydration error
-// without this -> mismatch in what server and client loads
-const SelectableTimelineCard = dynamic(
-  () => import('../cards/selectable-timeline-card'),
-  {
-    ssr: false,
-  }
-);
+// component imports
+import TimelineNode from './timeline-node';
+import TimelineContentNode from './timeline-content-node';
 
 const professionalTimelineInformation = [
   {
@@ -27,6 +17,17 @@ const professionalTimelineInformation = [
     title: 'Software Engineer I & II',
     positionData: {
       products: 'Registry, Lists, Design Services',
+      resumeBullets: [
+        'Architected and developed internal tool to dynamically filter large lists of products (>50k) in order to decrease sourcing time for designers helping customers.',
+        'Led Wayfair’s Design Services tech experience which included maintenance of React web app, Kafka messaging, DB insertions, a Salesforce connection, and a Buildkite CI/CD pipeline.',
+        'Reduced missing data monitor trigger amounts by >95% by diagnosing root causes behind missing data and delivering effectively on plan to patch the underlying issues.',
+        'Collaborated with cross-functional partners to define multi-year technical roadmaps communicating highly technical plans to non-technical stakeholders.',
+        'Elevated understanding across team by documenting technical plans for large scale projects leveraging an Architectural Design Review format.',
+        'Designed GraphQL schema to aid in migration from Contentful to an internal content management system.',
+        'Served different experiences of Design Services Landing Page conditional on the geolocation of the user.',
+        'Advised onboarding and ramp-up of junior team member as team lead and mentor for 7 months.',
+        'Aided in company-wide migration from legacy PHP monolith code to decoupled Java microservice in collaboration with 15+ engineers.',
+      ],
     },
   },
   {
@@ -36,6 +37,7 @@ const professionalTimelineInformation = [
     title: 'Software Engineering Intern',
     positionData: {
       products: 'Credit Card & Financing',
+      resumeBullets: [],
     },
   },
   {
@@ -44,38 +46,6 @@ const professionalTimelineInformation = [
     title: 'B.S. in Computer Engineering',
   },
 ];
-
-const TimelineLineNode = ({ date }) => {
-  return (
-    <TimelineSeparator>
-      <TimelineConnector />
-      <TimelineDot variant="outlined" />
-      <TimelineConnector />
-    </TimelineSeparator>
-  );
-};
-
-const TimelineContentNode = ({
-  date,
-  company,
-  title,
-  teams,
-  logoSrc,
-  positionData,
-}) => {
-  return (
-    <TimelineContent sx={{ fontFamily: 'Neue Regrade' }}>
-      <SelectableTimelineCard
-        date={date}
-        company={company}
-        title={title}
-        teams={teams}
-        logoSrc={logoSrc}
-        positionData={positionData}
-      />
-    </TimelineContent>
-  );
-};
 
 // TODO: clean this up and add a popout with info about the clicked on job
 const ProfessionalTimeline = () => {
@@ -94,7 +64,7 @@ const ProfessionalTimeline = () => {
         ({ date, company, title, teams, logoSrc, positionData }, index) => {
           return (
             <TimelineItem key={index} sx={{ fontFamily: 'Neue Regrade' }}>
-              <TimelineLineNode />
+              <TimelineNode />
               <TimelineContentNode
                 company={company}
                 title={title}

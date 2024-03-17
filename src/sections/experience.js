@@ -37,7 +37,7 @@ const projectData = [
 ];
 
 const Experience = () => {
-  const isLargeScreen = useMediaQuery('(min-width: 768px)');
+  const isLargeScreen = useMediaQuery('(min-width: 1200px)');
   const [activeExperienceType, setActiveExperienceType] =
     useState('professional');
 
@@ -48,7 +48,6 @@ const Experience = () => {
   };
 
   const ProjectComponent = ({ projectData }) => {
-    console.log(isLargeScreen);
     return isLargeScreen ? (
       <ProjectGrid projectData={projectData} />
     ) : (

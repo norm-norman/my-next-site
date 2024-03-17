@@ -79,10 +79,15 @@ const WebDevelopmentPillars = () => {
           marginTop: '5em',
         }}
       >
-        {pillarTexts.map(({ id, header, text, icon }) => {
+        {pillarTexts.map(({ id, header, text, icon, actionWord }) => {
           return (
             <Grid key={id} item sx={{ display: 'flex', padding: '10px' }}>
-              <DevelopmentPillarCard header={header} text={text} icon={icon} />
+              <DevelopmentPillarCard
+                header={header}
+                text={text}
+                icon={icon}
+                actionWord={actionWord}
+              />
             </Grid>
           );
         })}

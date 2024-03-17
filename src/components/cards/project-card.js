@@ -31,6 +31,7 @@ const ProjectCard = ({
         color: 'white',
         minHeight: '280px',
         width: { width },
+        maxWidth: '548px',
       }}
     >
       <CardCover>
@@ -41,16 +42,16 @@ const ProjectCard = ({
           background: 'rgba(0,0,0,0.8)',
         }}
       />
-      <CardContent>
-        <Typography level="title-lg" textColor={'white'}>
+      <CardContent sx={{ fontFamily: 'Neue Regrade' }}>
+        <Typography level="h4" textColor="white">
           {name}
         </Typography>
-        <Typography level={'p'} textColor="white">
+        <Typography level="p" textColor="white">
           {description}
         </Typography>
       </CardContent>
       <CardContent sx={{ justifyContent: 'flex-end' }}>
-        <Stack direction={'row'}>
+        <Stack direction="row">
           <SkillPillGrid skills={skills} />
           <GithubButton link={githubLink} />
         </Stack>

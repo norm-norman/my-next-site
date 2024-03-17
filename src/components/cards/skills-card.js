@@ -15,7 +15,7 @@ const SkillsCard = ({ header, subheader, skills }) => {
       alignItems="center"
       sx={{ padding: 2 }}
     >
-      <ValuePropWithHeader header={header} text={subheader} />
+      <ValuePropWithHeader header={header} />
       <SkillPillGrid skills={skills} />
     </Stack>
   );

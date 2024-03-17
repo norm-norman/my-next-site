@@ -11,7 +11,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import ProjectCard from '../cards/project-card';
 import SwipeableViews from 'react-swipeable-views';
 
-const ProjectCarousel = ({ isLargeScreen, projectData }) => {
+const ProjectCarousel = ({ projectData }) => {
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = projectData.length;
 
@@ -61,7 +61,7 @@ const ProjectCarousel = ({ isLargeScreen, projectData }) => {
                 return (
                   <ProjectCard
                     key={githubLink}
-                    width={'90vw'}
+                    width="90vw"
                     name={name}
                     skills={skills}
                     imageUrl={imageUrl}

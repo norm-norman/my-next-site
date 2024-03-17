@@ -13,6 +13,30 @@ const styles = {
   width: '80%',
 };
 
+const skillsByCategory = [
+  {
+    category: 'DevOps',
+    skills: ['Jenkins', 'GCP', 'Buildkite', 'Kubernetes', 'Docker'],
+  },
+  {
+    category: 'Backend & Database',
+    skills: ['PHP', 'Java', 'Node.js', 'C#', 'GQL', 'SQL', 'BigQuery'],
+  },
+  {
+    category: 'Frontend & Design',
+    skills: [
+      'React',
+      'Next.js',
+      'Javascript',
+      'Typescript',
+      'HTML',
+      'CSS',
+      'Canva',
+      'Figma',
+    ],
+  },
+];
+
 const AboutMe = () => {
   const isLargeScreen = useMediaQuery('(min-width:800px)');
   return (
@@ -38,7 +62,10 @@ const AboutMe = () => {
             e-commerce space and am always looking to learn new things.
           </p>
         </div>
-        <SkillsGroup isLargeScreen={isLargeScreen} />
+        <SkillsGroup
+          isLargeScreen={isLargeScreen}
+          skillsByCategory={skillsByCategory}
+        />
       </Stack>
     </div>
   );

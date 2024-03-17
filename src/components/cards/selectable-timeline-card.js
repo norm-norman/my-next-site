@@ -37,7 +37,6 @@ const SelectableTimelineCard = ({
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   return (
     <Card
       key={key}
@@ -53,7 +52,7 @@ const SelectableTimelineCard = ({
         color: 'white',
       }}
     >
-      <CardActionArea disableRipple>
+      <CardActionArea disableRipple disabled={!positionData}>
         <CardContent>
           <div
             style={{

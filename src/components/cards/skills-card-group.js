@@ -8,8 +8,7 @@ import Box from '@mui/material/Box';
 // component imports
 import SkillsCard from './skills-card';
 
-const SkillsGroup = ({ isLargeScreen }) => {
-  const skills = ['php', 'react', 'nextjs', 'java', 'cypress'];
+const SkillsGroup = ({ isLargeScreen, skillsByCategory }) => {
   return (
     <Box
       sx={{
@@ -25,9 +24,8 @@ const SkillsGroup = ({ isLargeScreen }) => {
     >
       <Stack direction={isLargeScreen ? 'row' : 'column'}>
         <SkillsCard
-          header="Devops"
-          subheader="Tools & Languages"
-          skills={skills}
+          header={skillsByCategory[0].category}
+          skills={skillsByCategory[0].skills}
         />
         <Divider
           orientation={isLargeScreen ? 'vertical' : 'horizontal'}
@@ -35,9 +33,8 @@ const SkillsGroup = ({ isLargeScreen }) => {
           sx={{ bgcolor: '#001F54' }}
         />
         <SkillsCard
-          header="Frontend & Design"
-          subheader="Tools & Languages"
-          skills={skills}
+          header={skillsByCategory[1].category}
+          skills={skillsByCategory[1].skills}
         />
         <Divider
           orientation={isLargeScreen ? 'vertical' : 'horizontal'}
@@ -45,9 +42,8 @@ const SkillsGroup = ({ isLargeScreen }) => {
           sx={{ bgcolor: '#001F54' }}
         />
         <SkillsCard
-          header="Backend & Database"
-          subheader="Tools & Languages"
-          skills={skills}
+          header={skillsByCategory[2].category}
+          skills={skillsByCategory[2].skills}
         />
       </Stack>
     </Box>

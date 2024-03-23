@@ -8,8 +8,10 @@ import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import Divider from '@mui/material/Divider';
 
 // component imports
+import SkillPillGrid from '../skills/skill-pill-grid';
 import ExpandMore from '../custom-stylized/expand-collapse-toggle';
 
 const SelectableTimelineCard = ({
@@ -22,7 +24,6 @@ const SelectableTimelineCard = ({
 }) => {
   const [expanded, setExpanded] = useState(false);
 
-  console.log(positionData);
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -81,10 +82,24 @@ const SelectableTimelineCard = ({
       {positionData && (
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography level="body1" sx={{ fontFamily: 'Neue Regrade' }}>
-              Products: {positionData.description}
+            <Typography
+              level="h2"
+              sx={{
+                fontFamily: 'Neue Regrade',
+                textAlign: 'left',
+                fontSize: '1.0em',
+              }}
+            >
+              {positionData.description}
             </Typography>
-            <p>{positionData.description}</p>
+            <Divider
+              orientation={'horizontal'}
+              sx={{ bgcolor: '#001F54', marginY: 2 }}
+            />
+            <Typography level="body1" sx={{ fontFamily: 'Neue Regrade' }}>
+              Products: {positionData.products}
+            </Typography>
+            <SkillPillGrid skills={positionData.skills} />
           </CardContent>
         </Collapse>
       )}

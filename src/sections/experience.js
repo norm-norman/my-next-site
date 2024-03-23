@@ -38,14 +38,27 @@ const projectData = [
 
 const professionalTimelineInformation = [
   {
-    date: '2020 - Present',
+    date: '2020 - 2024',
     logoSrc: 'wayfair_logo.png',
     company: 'Wayfair',
     title: 'Software Engineer I & II',
     positionData: {
       products: 'Registry, Lists, Design Services',
+      skills: [
+        'React',
+        'Contentful',
+        'GQL',
+        'Java',
+        'Buildkite',
+        'PHP',
+        'Docker',
+        'Kubernetes',
+        'Node.js',
+        'GCP',
+        'SCSS',
+      ],
       description:
-        "Spearheaded various technical initiatives to optimize operations and enhance user experiences at Wayfair. This included architecting and developing an internal tool to streamline product sourcing, leading the enhancement and maintenance of critical tech components such as React web apps and Kafka messaging, significantly reducing data discrepancies, and collaborating with diverse teams to define long-term technical strategies. I also played a pivotal role in knowledge dissemination through documentation, mentored junior team members, and contributed to the company's transition to a modern microservice architecture.",
+        "Spearheaded various technical initiatives to optimize operations and enhance user experiences at Wayfair. This included architecting and developing an internal tool to streamline product sourcing, leading the enhancement and maintenance of critical tech components, significantly reducing data discrepancies, and collaborating with diverse teams to define long-term technical strategies. I also played a pivotal role in knowledge dissemination through documentation, mentored junior team members, and contributed to the company's transition to a modern microservice architecture.",
     },
   },
   {
@@ -55,6 +68,9 @@ const professionalTimelineInformation = [
     title: 'Software Engineering Intern',
     positionData: {
       products: 'Credit Card & Financing',
+      skills: ['React', 'PHP', 'CSS', 'SQL', 'Redux', 'MVC'],
+      description:
+        'During my internship at Wayfair, I focused on revamping an intake quiz using React Redux pattern and developing an internal CMS, simplifying landing page updates. I quickly incorporated best practices in tracking, logging, monitoring, and agile principles, enhancing our development processes. These efforts streamlined operations and improved overall efficiency.',
     },
   },
   {

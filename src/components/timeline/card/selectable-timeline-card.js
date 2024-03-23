@@ -32,7 +32,7 @@ const SelectableTimelineCard = ({
         borderColor: '#001F54',
         boxShadow: '0 8px 16px 0 rgba(0,0,0,0.4)',
         borderRadius: '10px',
-        maxWidth: 345,
+        maxWidth: 350,
         color: 'white',
       }}
     >

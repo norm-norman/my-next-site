@@ -34,6 +34,7 @@ const ContactFormWrapper = () => {
     if (data.success) {
       event.target.reset();
       setShowSubmitted(true);
+      setButtonText(buttonTexts.send); // reset button text
     } else {
       console.log('Error', data);
       setErrorText(data.message);

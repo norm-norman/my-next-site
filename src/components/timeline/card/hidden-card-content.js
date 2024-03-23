@@ -18,7 +18,7 @@ const HiddenCardContent = ({ positionData, expanded }) => {
           sx={{
             fontFamily: 'Neue Regrade',
             textAlign: 'left',
-            fontSize: '1.0em',
+            fontSize: '1.1em',
           }}
         >
           {positionData.description}

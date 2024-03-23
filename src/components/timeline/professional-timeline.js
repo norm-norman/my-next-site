@@ -6,7 +6,7 @@ import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 // component imports
-import TimelineNode from './timeline-node';
+import TimeLineSegment from './timeline-segment';
 import TimelineContentNode from './timeline-content-node';
 
 // TODO: clean this up and add a popout with info about the clicked on job
@@ -26,7 +26,7 @@ const ProfessionalTimeline = ({ professionalTimelineInformation }) => {
         ({ date, company, title, teams, logoSrc, positionData }, index) => {
           return (
             <TimelineItem key={index} sx={{ fontFamily: 'Neue Regrade' }}>
-              <TimelineNode />
+              <TimeLineSegment />
               <TimelineContentNode
                 company={company}
                 title={title}

@@ -5,7 +5,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineDot from '@mui/lab/TimelineDot';
 
-const TimeLineNode = () => {
+const TimeLineSegment = () => {
   return (
     <TimelineSeparator>
       <TimelineConnector />
@@ -15,4 +15,4 @@ const TimeLineNode = () => {
   );
 };
 
-export default TimeLineNode;
+export default TimeLineSegment;

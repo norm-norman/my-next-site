@@ -7,7 +7,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 // dynamically import this card to avoid hydration error
 // without this -> mismatch in what server and client loads
 const SelectableTimelineCard = dynamic(
-  () => import('../cards/selectable-timeline-card'),
+  () => import('./card/selectable-timeline-card'),
   {
     ssr: false,
   }

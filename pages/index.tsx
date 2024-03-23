@@ -41,7 +41,7 @@ export default function Home({
     <div>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <title>Norm's Site</title>
+        <title>Norm Norman | Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

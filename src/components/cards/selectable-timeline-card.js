@@ -22,6 +22,7 @@ const SelectableTimelineCard = ({
 }) => {
   const [expanded, setExpanded] = useState(false);
 
+  console.log(positionData);
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -81,16 +82,9 @@ const SelectableTimelineCard = ({
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography level="body1" sx={{ fontFamily: 'Neue Regrade' }}>
-              Products: {positionData.products}
+              Products: {positionData.description}
             </Typography>
-            <Typography sx={{ fontFamily: 'Neue Regrade' }} variant="h6">
-              Achievements & Responsibilites
-            </Typography>
-            <ul>
-              {positionData?.resumeBullets.map((bullet) => {
-                return <li>{bullet}</li>;
-              })}
-            </ul>
+            <p>{positionData.description}</p>
           </CardContent>
         </Collapse>
       )}

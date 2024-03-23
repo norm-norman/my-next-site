@@ -5,6 +5,7 @@ const styles = {
   flexBasis: '100%',
   textAlign: 'center',
 };
+
 const ValuePropWithHeader = ({ header, text }) => {
   return (
     <div style={styles}>

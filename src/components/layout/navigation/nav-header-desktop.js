@@ -4,21 +4,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
-import AppBar from '@mui/material/AppBar';
-import { styled } from '@mui/material/styles';
 
 // component imports
 import NavigationButtons from '../../buttons/navigation-buttons';
-
-const StylizedAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: '#0a1128',
-  opacity: '100%',
-  boxShadow: 'none',
-  display: 'flex',
-  alignItems: 'end',
-  paddingRight: '5vw',
-  paddingTop: '3vh',
-}));
+import { StylizedDesktopNavigationBar } from '../../custom-stylized/navigation-bar';
 
 const NavigationHeaderDesktop = () => {
   return (
@@ -32,9 +21,9 @@ const NavigationHeaderDesktop = () => {
       >
         <Grid item xs={6} justifyContent={'end'}>
           <Stack id="navigationButtons" alignItems={'end'}>
-            <StylizedAppBar component="nav">
+            <StylizedDesktopNavigationBar component="nav">
               <NavigationButtons stackDirection={'row'} />
-            </StylizedAppBar>
+            </StylizedDesktopNavigationBar>
           </Stack>
         </Grid>
       </Grid>

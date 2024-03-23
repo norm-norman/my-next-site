@@ -2,17 +2,12 @@ import React from 'react';
 
 // mui imports
 import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
-import ButtonBase from '@mui/material/ButtonBase';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
+// component imports
 import { openInNewTab } from '../../utils/open-in-new-tab';
-
-const SocialMediaIconButton = styled(ButtonBase)(({ theme }) => ({
-  padding: '10px',
-  color: 'white',
-}));
+import { SocialMediaIconButton } from '../custom-stylized/social-media-icon-buttons';
 
 export const GithubButton = ({ link }) => {
   const githubLink = link || 'https://github.com/norm-norman';

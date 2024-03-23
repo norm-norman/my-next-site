@@ -1,20 +1,11 @@
 import React from 'react';
+
+// mui imports
 import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
-import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/joy/Typography';
 
-const NavigationButton = styled(ButtonBase)(({ theme }) => ({
-  color: 'white',
-  fontFamily: 'Neue Regrade',
-  fontSize: '1.4em',
-  padding: '0.5em',
-  zIndex: 100,
-  '&:hover': {
-    color: 'grey',
-    fontWeight: 'bold',
-  },
-}));
+// component imports
+import { NavigationButton } from '../custom-stylized/navigation-bar';
 
 const NavigationLabel = ({ text }) => {
   return (

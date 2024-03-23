@@ -1,8 +1,10 @@
 import React from 'react';
+
 // mui imports
 import Stack from '@mui/material/Stack';
 import useMediaQuery from '@mui/material/useMediaQuery';
-// components
+
+// component imports
 import WelcomeTextAndButtons from '../components/text/welcome-text';
 import CartoonMe from '../components/images/cartoon-me';
 

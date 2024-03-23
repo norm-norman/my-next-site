@@ -1,5 +1,6 @@
 import React from 'react';
-import Box from '@mui/material/Box';
+
+// mui imports
 import Stack from '@mui/material/Stack';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -38,11 +39,11 @@ const skillsByCategory = [
 ];
 
 const AboutMe = () => {
-  const isLargeScreen = useMediaQuery('(min-width:800px)');
+  const isLargeScreen = useMediaQuery('(min-width:950px)');
   return (
     <div id={'aboutMe'} style={styles}>
       <Stack
-        direction={isLargeScreen ? 'row' : 'column'}
+        direction={isLargeScreen ? 'column' : 'column'}
         justifyContent="center"
         alignItems="center"
         spacing={6}
@@ -55,11 +56,28 @@ const AboutMe = () => {
             lineHeight: 1.3,
           }}
         >
-          <p>
-            My name is Norm - I am a full stack web developer and I love what I
-            do. I am passionate about making intuitive (and exciting!) web
-            experiences. I have 3 years of experience, primarily in the
-            e-commerce space and am always looking to learn new things.
+          <p style={{ textAlign: 'justify' }}>
+            Hey! My journey as a full-stack developer started in a classroom at{' '}
+            <span style={{ fontWeight: 'bold' }}>Boston University</span>, where
+            I was given an open ended task to create a React web app from which
+            to control a small vehicle and I ran with it. Nearly 6 years later I
+            have a few years of experience under my belt and even more love for
+            what I do. After nearly 4 years at{' '}
+            <span style={{ fontWeight: 'bold' }}>Wayfair</span>, I am looking
+            for my next project and am excited for what the future has in store.
+            I am a passionate, product-driven, user-focused developer with a
+            drive to innovate and build success. Sound interesting? Scroll to
+            check out my page or{' '}
+            <a
+              href="#contact"
+              style={{
+                fontWeight: 'bold',
+                color: 'inherit',
+              }}
+            >
+              contact me to start connecting
+            </a>
+            !
           </p>
         </div>
         <SkillsGroup

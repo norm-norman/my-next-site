@@ -1,9 +1,13 @@
 import React from 'react';
-import SocialMediaIconButtons from '../buttons/social-media-icon-buttons';
-import ContactForm from './contact-form';
-import HeadingText from '../text/heading-text';
+
+// mui imports
 import Stack from '@mui/material/Stack';
 import { useMediaQuery } from '@mui/material';
+
+// component imports
+import HeadingText from '../text/heading-text';
+import SocialMediaIconButtons from '../buttons/social-media-icon-buttons';
+import ContactFormWrapper from '../contact-form/contact-form-wrapper';
 
 const Footer = () => {
   const isLargeScreen = useMediaQuery('(min-width:1000px)');
@@ -19,7 +23,7 @@ const Footer = () => {
         <p>Fill out this form or follow me on the platforms listed below</p>
         <SocialMediaIconButtons />
       </Stack>
-      <ContactForm />
+      <ContactFormWrapper />
     </Stack>
   );
 };

@@ -1,4 +1,6 @@
 import * as React from 'react';
+
+// mui imports
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -37,7 +39,7 @@ const EntryComponent = () => {
         >
           <AboutMe />
           <WebDevelopmentPillars />
-          <Experience isLargeScreen={isLargeScreen} />
+          <Experience />
         </Stack>
       </Box>
     </>

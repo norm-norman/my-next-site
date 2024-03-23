@@ -34,7 +34,7 @@ const pillarTexts = [
   {
     id: 2,
     header: 'User Experience should force you to SCALE',
-    text: 'We want to create a user experience that gets people wanting to try our product. Oftentimes it will be taken for granted when a product works smoothly, but the user will not have bad memories to keep them away.',
+    text: "It's simple - Build great products. Attract more users. Think of scaling as a KPI. Clean and readable code will help you scale when your product demands it.",
     icon: <TrendingUpIcon fontSize="large" />,
   },
 ];
@@ -79,10 +79,15 @@ const WebDevelopmentPillars = () => {
           marginTop: '5em',
         }}
       >
-        {pillarTexts.map(({ id, header, text, icon }) => {
+        {pillarTexts.map(({ id, header, text, icon, actionWord }) => {
           return (
             <Grid key={id} item sx={{ display: 'flex', padding: '10px' }}>
-              <DevelopmentPillarCard header={header} text={text} icon={icon} />
+              <DevelopmentPillarCard
+                header={header}
+                text={text}
+                icon={icon}
+                actionWord={actionWord}
+              />
             </Grid>
           );
         })}

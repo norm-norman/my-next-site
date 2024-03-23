@@ -25,7 +25,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/song-information-tile.js",
+    "src/components/cards/song-information-tile.js",
     "src/entry-component.js"
   ],
   "exclude": ["node_modules"]

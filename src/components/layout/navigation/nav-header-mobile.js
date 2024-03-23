@@ -4,23 +4,11 @@ import React, { useState } from 'react';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import AppBar from '@mui/material/AppBar';
-import { styled } from '@mui/material/styles';
 
 // component imports
 import NavigationButtons from '../../buttons/navigation-buttons';
 import SocialMediaIconButtons from '../../buttons/social-media-icon-buttons';
-
-const StylizedAppBar = styled(AppBar)(({ theme }) => ({
-  backgroundColor: '#0a1128',
-  opacity: '100%',
-  boxShadow: 'none',
-  display: 'flex',
-  alignItems: 'end',
-  paddingRight: '5vw',
-  paddingTop: '3vh',
-  zIndex: 100,
-}));
+import { StylizedMobileNavigationBar } from '../../custom-stylized/navigation-bar';
 
 const drawerStyles = {
   backgroundColor: '#001F54',
@@ -29,7 +17,6 @@ const drawerStyles = {
   padding: '5px',
 };
 
-// TODO move contact form into here
 const NavigationHeaderMobile = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const toggleDrawer = (isOpen) => () => {
@@ -49,7 +36,7 @@ const NavigationHeaderMobile = () => {
         flexDirection: 'row-reverse',
       }}
     >
-      <StylizedAppBar component="nav">
+      <StylizedMobileNavigationBar component="nav">
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -58,7 +45,7 @@ const NavigationHeaderMobile = () => {
         >
           <MenuIcon />
         </IconButton>
-      </StylizedAppBar>
+      </StylizedMobileNavigationBar>
       <SwipeableDrawer
         anchor={'right'}
         open={isDrawerOpen}

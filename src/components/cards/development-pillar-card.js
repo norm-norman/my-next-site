@@ -9,7 +9,7 @@ import Avatar from '@mui/material/Avatar';
 // component imports
 import ValuePropWithHeader from '../text/value-prop-with-header';
 
-const DevelopmentPillarCard = ({ key, header, text, icon }) => {
+const DevelopmentPillarCard = ({ key, header, text, icon, actionWord }) => {
   return (
     <>
       <Box sx={{ minWidth: 275, display: 'flex', zIndex: 2 }}>
@@ -36,7 +36,12 @@ const DevelopmentPillarCard = ({ key, header, text, icon }) => {
             }}
           >
             <Avatar sx={{ backgroundColor: '#080E21' }}>{icon}</Avatar>
-            <ValuePropWithHeader key={key} header={header} text={text} />
+            <ValuePropWithHeader
+              key={key}
+              header={header}
+              text={text}
+              actionWord={actionWord}
+            />
           </CardContent>
         </Card>
       </Box>

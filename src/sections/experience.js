@@ -36,8 +36,52 @@ const projectData = [
   },
 ];
 
+const professionalTimelineInformation = [
+  {
+    date: '2020 - 2024',
+    logoSrc: 'wayfair_logo.png',
+    company: 'Wayfair',
+    title: 'Software Engineer I & II',
+    positionData: {
+      products: 'Registry, Lists, Design Services',
+      skills: [
+        'React',
+        'Contentful',
+        'GQL',
+        'Java',
+        'Buildkite',
+        'PHP',
+        'Docker',
+        'Kubernetes',
+        'Node.js',
+        'GCP',
+        'SCSS',
+      ],
+      description:
+        "Spearheaded various technical initiatives to optimize operations and enhance user experiences at Wayfair. This included architecting and developing an internal tool to streamline product sourcing, leading the enhancement and maintenance of critical tech components, significantly reducing data discrepancies, and collaborating with diverse teams to define long-term technical strategies. I also played a pivotal role in knowledge dissemination through documentation, mentored junior team members, and contributed to the company's transition to a modern microservice architecture.",
+    },
+  },
+  {
+    date: '2019',
+    logoSrc: 'wayfair_logo.png',
+    company: 'Wayfair',
+    title: 'Software Engineering Intern',
+    positionData: {
+      products: 'Credit Card & Financing',
+      skills: ['React', 'PHP', 'CSS', 'SQL', 'Redux', 'MVC'],
+      description:
+        'During my internship at Wayfair, I focused on revamping an intake quiz using React Redux pattern and developing an internal CMS, simplifying landing page updates. I quickly incorporated best practices in tracking, logging, monitoring, and agile principles, enhancing our development processes. These efforts streamlined operations and improved overall efficiency.',
+    },
+  },
+  {
+    logoSrc: 'bu_logo.png',
+    company: 'Boston University',
+    title: 'B.S. in Computer Engineering',
+  },
+];
+
 const Experience = () => {
-  const isLargeScreen = useMediaQuery('(min-width: 768px)');
+  const isLargeScreen = useMediaQuery('(min-width: 1200px)');
   const [activeExperienceType, setActiveExperienceType] =
     useState('professional');
 
@@ -48,7 +92,6 @@ const Experience = () => {
   };
 
   const ProjectComponent = ({ projectData }) => {
-    console.log(isLargeScreen);
     return isLargeScreen ? (
       <ProjectGrid projectData={projectData} />
     ) : (
@@ -75,13 +118,17 @@ const Experience = () => {
         spacing={6}
       >
         <div sx={{ paddingBottom: 4, textAlign: 'start' }}>
-          <HeadingText level={'h4'} text={'Experience'} />
+          <HeadingText level="h4" text="Experience" />
         </div>
         <ExperienceToggle
           activeExperienceType={activeExperienceType}
           onChangeCallback={handleChange}
         />
-        {activeExperienceType === 'professional' && <ProfessionalTimeline />}
+        {activeExperienceType === 'professional' && (
+          <ProfessionalTimeline
+            professionalTimelineInformation={professionalTimelineInformation}
+          />
+        )}
         {activeExperienceType === 'projects' && (
           <ProjectComponent projectData={projectData} />
         )}

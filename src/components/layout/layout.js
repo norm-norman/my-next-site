@@ -8,7 +8,11 @@ import NavigationHeaderDesktop from './navigation/nav-header-desktop';
 import NavigationHeaderMobile from './navigation/nav-header-mobile';
 import Footer from './footer';
 
-export default function Layout({ children }) {
+export default function Layout({
+  hideHeader = false,
+  hideFooter = false,
+  children,
+}) {
   const isLargeScreen = useMediaQuery('(min-width:915px)');
 
   return (
@@ -21,7 +25,7 @@ export default function Layout({ children }) {
             <NavigationHeaderMobile />
           )}
           {children}
-          <Footer />
+          {!hideFooter && <Footer />}
         </main>
       </div>
     </>

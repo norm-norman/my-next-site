@@ -20,31 +20,38 @@ const NavigationButtons = ({ buttonCallbackFunction, stackDirection }) => {
     <Stack direction={stackDirection}>
       <NavigationButton
         variation={'text'}
-        href={'#aboutMe'}
+        href={'/#aboutMe'}
         onClick={buttonCallbackFunction}
       >
         <NavigationLabel text="Skills" />
       </NavigationButton>
       <NavigationButton
         variation={'text'}
-        href={'#methodology'}
+        href={'/#methodology'}
         onClick={buttonCallbackFunction}
       >
         <NavigationLabel text="Methodology" />
       </NavigationButton>
       <NavigationButton
         variation={'text'}
-        href={'#experience'}
+        href={'/#experience'}
         onClick={buttonCallbackFunction}
       >
         <NavigationLabel text="Experience" />
       </NavigationButton>
       <NavigationButton
         variation={'text'}
-        href={'#contact'}
+        href={'/#contact'}
         onClick={buttonCallbackFunction}
       >
         <NavigationLabel text="Contact" />
+      </NavigationButton>
+      <NavigationButton
+        variation={'text'}
+        href={'/office-hours'}
+        onClick={buttonCallbackFunction}
+      >
+        <NavigationLabel text="Social" />
       </NavigationButton>
     </Stack>
   );
